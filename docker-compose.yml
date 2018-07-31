@@ -55,6 +55,14 @@ services:
       options:
         max-size: ${NGINX_LETSENCRYPT_LOG_MAX_SIZE:-2m}
         max-file: ${NGINX_LETSENCRYPT_LOG_MAX_FILE:-10}
+  odoo
+    image: veivaa/odoo:11.0
+
+    environment:
+      VIRTUAL_HOST: hoangphuc.nguyencon.info
+      LETSENCRYPT_HOST: hoangphuc.nguyencon.info
+      LETSENCRYPT_EMAIL: contact@nguyencon.info  
+      VIRTUAL_PORT: 8069
 
 networks:
   default:
